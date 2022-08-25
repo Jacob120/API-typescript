@@ -1,7 +1,8 @@
+import { UsersRepository } from './users-repository.interface';
 import { User } from '../interfaces/user.interface';
 import shortid from 'shortid';
 
-export class UsersMockRepository {
+export class UsersMockRepository implements UsersRepository {
     private users: Array<User> = [];
     addItem(item: User): User {
         item.id = shortid.generate();
